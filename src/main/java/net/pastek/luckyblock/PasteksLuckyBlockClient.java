@@ -1,4 +1,4 @@
-package net.pastek.pastekluckyblock;
+package net.pastek.luckyblock;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
