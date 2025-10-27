@@ -1,0 +1,13 @@
+{
+  "itemGroup.pastekluckyblock": "Example Mod Tab",
+  "block.pastekluckyblock.example_block": "Example Block",
+  "item.pastekluckyblock.example_item": "Example Item",
+
+  "pastekluckyblock.configuration.title": "Pastek's Lucky Block Configs",
+  "pastekluckyblock.configuration.section.pastekluckyblock.common.toml": "Pastek's Lucky Block Configs",
+  "pastekluckyblock.configuration.section.pastekluckyblock.common.toml.title": "Pastek's Lucky Block Configs",
+  "pastekluckyblock.configuration.items": "Item List",
+  "pastekluckyblock.configuration.logDirtBlock": "Log Dirt Block",
+  "pastekluckyblock.configuration.magicNumberIntroduction": "Magic Number Text",
+  "pastekluckyblock.configuration.magicNumber": "Magic Number"
+}
