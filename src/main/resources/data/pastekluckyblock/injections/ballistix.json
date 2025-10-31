@@ -1,0 +1,28 @@
+{
+  "trigger_chance": 0.10,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "ballistix:obsidian", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:condensive", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:attractive", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:repulsive", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:incendiary", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:shrapnel", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:chemical", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:anvil", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:infestive", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:debilitation", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "ballistix:fragmentation", "weight": 1 },
+        { "type": "minecraft:item", "name": "ballistix:contagious", "weight": 1 },
+        { "type": "minecraft:item", "name": "ballistix:breaching", "weight": 1 },
+        { "type": "minecraft:item", "name": "ballistix:thermobaric", "weight": 1 },
+        { "type": "minecraft:item", "name": "ballistix:sonic", "weight": 1 },
+        { "type": "minecraft:item", "name": "ballistix:landmine", "weight": 5 },
+
+        { "type": "minecraft:item", "name": "ballistix:samturret", "weight": 2 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "entries": [
+    "pastekluckyblock:pastekluckyblock",
+    "pastekluckyblock:create",
+    "pastekluckyblock:tombstone",
+    "pastekluckyblock:alexsmobs",
+    "pastekluckyblock:aquamirae",
+    "pastekluckyblock:cataclysm",
+    "pastekluckyblock:cold_sweat",
+    "pastekluckyblock:farmersdelight",
+    "pastekluckyblock:vs_eureka",
+    "pastekluckyblock:artifacts",
+    "pastekluckyblock:immersiveengineering",
+    "pastekluckyblock:relics",
+    "pastekluckyblock:electrodynamics",
+    "pastekluckyblock:nuclearscience",
+    "pastekluckyblock:chemicalscience",
+    "pastekluckyblock:assemblyline",
+    "pastekluckyblock:ballistix",
+    "pastekluckyblock:modularforcefields",
+    "pastekluckyblock:cobblemon"
+  ],
+  "replace": false
+}

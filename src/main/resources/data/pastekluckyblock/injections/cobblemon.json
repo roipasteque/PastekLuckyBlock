@@ -1,0 +1,77 @@
+{
+  "trigger_chance": 0.30,
+  "pools": [
+    {
+      "rolls": {
+        "min": 1,
+        "max": 3
+      },
+
+      "entries": [
+        { "type": "minecraft:item", "name": "cobblemon:energy_root", "weight": 3 },
+        { "type": "minecraft:item", "name": "cobblemon:revival_herb", "weight": 3 },
+        { "type": "minecraft:item", "name": "cobblemon:remedy", "weight": 3 },
+        { "type": "minecraft:item", "name": "cobblemon:heal_powder", "weight": 3 },
+        { "type": "minecraft:item", "name": "cobblemon:potion", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:super_potion", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:hyper_potion", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:max_potion", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:full_restore", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:revive", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:max_revive", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "cobblemon:antidote", "weight": 8 },
+        { "type": "minecraft:item", "name": "cobblemon:awakening", "weight": 8 },
+        { "type": "minecraft:item", "name": "cobblemon:burn_heal", "weight": 8 },
+        { "type": "minecraft:item", "name": "cobblemon:ice_heal", "weight": 8 },
+        { "type": "minecraft:item", "name": "cobblemon:paralyze_heal", "weight": 8 },
+        { "type": "minecraft:item", "name": "cobblemon:full_heal", "weight": 6 },
+
+        { "type": "minecraft:item", "name": "cobblemon:ether", "weight": 10 },
+        { "type": "minecraft:item", "name": "cobblemon:max_ether", "weight": 8 },
+        { "type": "minecraft:item", "name": "cobblemon:elixir", "weight": 5 },
+        { "type": "minecraft:item", "name": "cobblemon:max_elixir", "weight": 4 },
+
+        { "type": "minecraft:item", "name": "cobblemon:x_attack", "weight": 12 },
+        { "type": "minecraft:item", "name": "cobblemon:x_defence", "weight": 12 },
+        { "type": "minecraft:item", "name": "cobblemon:x_special_attack", "weight": 12 },
+        { "type": "minecraft:item", "name": "cobblemon:x_special_defence", "weight": 12 },
+        { "type": "minecraft:item", "name": "cobblemon:x_speed", "weight": 12 },
+        { "type": "minecraft:item", "name": "cobblemon:x_accuracy", "weight": 12 },
+        { "type": "minecraft:item", "name": "cobblemon:dire_hit", "weight": 12 },
+        { "type": "minecraft:item", "name": "cobblemon:guard_spec", "weight": 12 },
+
+        { "type": "minecraft:item", "name": "cobblemon:hp_up", "weight": 2 },
+        { "type": "minecraft:item", "name": "cobblemon:protein", "weight": 2 },
+        { "type": "minecraft:item", "name": "cobblemon:iron", "weight": 2 },
+        { "type": "minecraft:item", "name": "cobblemon:calcium", "weight": 2 },
+        { "type": "minecraft:item", "name": "cobblemon:zinc", "weight": 2 },
+        { "type": "minecraft:item", "name": "cobblemon:carbos", "weight": 2 },
+        { "type": "minecraft:item", "name": "cobblemon:pp_up", "weight": 2 },
+
+        { "type": "minecraft:item", "name": "cobblemon:poke_ball", "weight": 16, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:great_ball", "weight": 12, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:ultra_ball", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:net_ball", "weight": 5 },
+        { "type": "minecraft:item", "name": "cobblemon:quick_ball", "weight": 5 },
+        { "type": "minecraft:item", "name": "cobblemon:dusk_ball", "weight": 5 },
+
+        { "type": "minecraft:item", "name": "cobblemon:rare_candy", "weight": 10 },
+        { "type": "minecraft:item", "name": "cobblemon:shell_bell", "weight": 10 },
+        { "type": "minecraft:item", "name": "cobblemon:leftovers", "weight": 10 },
+
+        { "type": "minecraft:item", "name": "cobblemon:red_apricorn", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:yellow_apricorn", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:green_apricorn", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:blue_apricorn", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:pink_apricorn", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:black_apricorn", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:white_apricorn", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+
+        { "type": "minecraft:item", "name": "cobblemon:oran_berry", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "cobblemon:sitrus_berry", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] }
+
+      ]
+    }
+  ]
+}

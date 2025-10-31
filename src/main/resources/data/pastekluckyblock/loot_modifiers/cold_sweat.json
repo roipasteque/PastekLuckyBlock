@@ -1,0 +1,9 @@
+{
+  "type": "pastekluckyblock:loot_table",
+  "conditions": [],
+  "injected_loot_table": "pastekluckyblock:injections/cold_sweat",
+  "target_loot_tables": [
+    "pastekluckyblock:chests/mid_loot"
+  ],
+  "modid": "cold_sweat"
+}

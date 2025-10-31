@@ -1,0 +1,53 @@
+{
+  "trigger_chance": 0.5,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "artifacts:umbrella", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:everlasting_beef", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:plastic_drinking_hat", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:novelty_drinking_hat", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:snorkel", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:night_vision_goggles", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:villager_hat", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:superstitious_hat", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:cowboy_hat", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:anglers_hat", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:lucky_scarf", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:scarf_of_invisibility", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:cross_necklace", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:panic_necklace", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:shock_pendant", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:flame_pendant", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:thorn_pendant", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:charm_of_sinking", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:cloud_in_a_bottle", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:obsidian_skull", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:antidote_vessel", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:universal_attractor", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:crystal_heart", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:helium_flamingo", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:chorus_totem", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:digging_claws", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:feral_claws", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:power_glove", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:fire_gauntlet", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:pocket_piston", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:vampiric_glove", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:golden_hook", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:onion_ring", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:pickaxe_heater", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:aqua_dashers", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:bunny_hoppers", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:kitty_slippers", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:running_shoes", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:snow_shoes", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:steadfast_spikes", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:flippers", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:rooted_boots", "weight": 1 },
+        { "type": "minecraft:item", "name": "artifacts:whoopee_cushion", "weight": 1 }
+      ]
+    }
+  ]
+}

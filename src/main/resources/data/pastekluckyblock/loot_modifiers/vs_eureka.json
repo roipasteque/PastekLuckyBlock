@@ -1,0 +1,10 @@
+{
+  "type": "pastekluckyblock:loot_table",
+  "conditions": [],
+  "injected_loot_table": "pastekluckyblock:injections/vs_eureka",
+  "target_loot_tables": [
+    "pastekluckyblock:chests/mid_loot",
+    "pastekluckyblock:chests/good_loot"
+  ],
+  "modid": "vs_eureka"
+}

@@ -1,0 +1,30 @@
+{
+  "trigger_chance": 0.25,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "cold_sweat:goat_fur", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:hoglin_hide", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:chameleon_molt", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:waterskin", "weight": 3 },
+        { "type": "minecraft:item", "name": "cold_sweat:filled_waterskin", "weight": 3 },
+
+        { "type": "minecraft:item", "name": "cold_sweat:hearth", "weight": 1 },
+        { "type": "minecraft:item", "name": "cold_sweat:boiler", "weight": 1 },
+        { "type": "minecraft:item", "name": "cold_sweat:icebox", "weight": 1 },
+        { "type": "minecraft:item", "name": "cold_sweat:sewing_table", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "cold_sweat:goat_fur_helmet", "weight": 2, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:goat_fur_chestplate", "weight": 2, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:goat_fur_leggings", "weight": 2, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:goat_fur_boots", "weight": 2, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:hoglin_helmet", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:hoglin_chestplate", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:hoglin_leggings", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "cold_sweat:hoglin_boots", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] }
+
+      ]
+    }
+  ]
+}
