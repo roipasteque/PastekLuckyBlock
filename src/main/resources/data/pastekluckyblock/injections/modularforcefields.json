@@ -1,0 +1,15 @@
+{
+  "trigger_chance": 0.10,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "modularforcefields:focusmatrix", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+
+        { "type": "minecraft:item", "name": "modularforcefields:coercionderiver", "weight": 1 },
+        { "type": "minecraft:item", "name": "modularforcefields:fortroncapacitor", "weight": 1 },
+        { "type": "minecraft:item", "name": "modularforcefields:biometricidentifier", "weight": 1 }
+      ]
+    }
+  ]
+}

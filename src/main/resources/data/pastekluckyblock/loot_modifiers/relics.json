@@ -1,0 +1,9 @@
+{
+  "type": "pastekluckyblock:loot_table",
+  "conditions": [],
+  "injected_loot_table": "pastekluckyblock:injections/relics",
+  "target_loot_tables": [
+    "pastekluckyblock:chests/lucky_loot"
+  ],
+  "modid": "relics"
+}

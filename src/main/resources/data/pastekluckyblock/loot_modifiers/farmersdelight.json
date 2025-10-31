@@ -1,0 +1,11 @@
+{
+  "type": "pastekluckyblock:loot_table",
+  "conditions": [],
+  "injected_loot_table": "pastekluckyblock:injections/farmersdelight",
+  "target_loot_tables": [
+    "pastekluckyblock:chests/mid_loot",
+    "pastekluckyblock:chests/good_loot",
+    "pastekluckyblock:chests/lucky_loot"
+  ],
+  "modid": "farmersdelight"
+}

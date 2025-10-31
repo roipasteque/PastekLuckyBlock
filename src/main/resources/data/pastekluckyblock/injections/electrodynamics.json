@@ -1,0 +1,115 @@
+{
+  "trigger_chance": 0.30,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "electrodynamics:wiretin", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireiron", "weight": 9, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wirecopper", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wiresilver", "weight": 7, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wiregold", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wiresuperconductive", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireinsulatedtinyellow", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireinsulatedironyellow", "weight": 9, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireinsulatedcopperyellow", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireinsulatedsilveryellow", "weight": 7, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireinsulatedgoldyellow", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireinsulatedsuperconductiveyellow", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireceramicinsulatedtinyellow", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireceramicinsulatedironyellow", "weight": 9, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireceramicinsulatedcopperyellow", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireceramicinsulatedsilveryellow", "weight": 7, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireceramicinsulatedgoldyellow", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:wireceramicinsulatedsuperconductiveyellow", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+
+        { "type": "minecraft:item", "name": "electrodynamics:pipecopper", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:pipesteel", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:gaspipeuninsulatedcopper", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:gaspipeuninsulatedsteel", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:gaspipeuninsulatedplastic", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+
+
+        { "type": "minecraft:item", "name": "electrodynamics:downgradetransformer", "weight": 6 },
+        { "type": "minecraft:item", "name": "electrodynamics:upgradetransformer", "weight": 6 },
+        { "type": "minecraft:item", "name": "electrodynamics:advanceddowngradetransformer", "weight": 1 },
+        { "type": "minecraft:item", "name": "electrodynamics:advancedupgradetransformer", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "voltaic:upgradebasiccapacity", "weight": 4 },
+        { "type": "minecraft:item", "name": "voltaic:upgradebasicspeed", "weight": 4 },
+        { "type": "minecraft:item", "name": "voltaic:upgradeimprovedsolar", "weight": 3 },
+        { "type": "minecraft:item", "name": "voltaic:upgradestator", "weight": 3 },
+        { "type": "minecraft:item", "name": "voltaic:upgradesilktouch", "weight": 1 },
+        { "type": "minecraft:item", "name": "voltaic:upgradefortune", "weight": 1 },
+        { "type": "minecraft:item", "name": "voltaic:upgradeunbreaking", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "electrodynamics:electricfurnace", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:electricarcfurnace", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:wiremill", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:mineralgrinder", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:fermentationplant", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:electricpump", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:mineralcrusher", "weight": 2 },
+        { "type": "minecraft:item", "name": "electrodynamics:oxidationfurnace", "weight": 2 },
+        { "type": "minecraft:item", "name": "electrodynamics:chemicalmixer", "weight": 2 },
+        { "type": "minecraft:item", "name": "electrodynamics:lathe", "weight": 2 },
+        { "type": "minecraft:item", "name": "electrodynamics:energizedalloyer", "weight": 2 },
+
+        { "type": "minecraft:item", "name": "electrodynamics:coalfurnace", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:solarpanel", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:thermoelectricgenerator", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:combustionchamber", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:hydroelectricgenerator", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:windmill", "weight": 3 },
+
+        { "type": "minecraft:item", "name": "electrodynamics:batterybox", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:lithiumbatterybox", "weight": 2 },
+        { "type": "minecraft:item", "name": "electrodynamics:carbynebatterybox", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "electrodynamics:tanksteel", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:tankreinforced", "weight": 2 },
+        { "type": "minecraft:item", "name": "electrodynamics:tankhsla", "weight": 1 },
+        { "type": "minecraft:item", "name": "electrodynamics:gastanksteel", "weight": 3 },
+        { "type": "minecraft:item", "name": "electrodynamics:gastankreinforced", "weight": 2 },
+        { "type": "minecraft:item", "name": "electrodynamics:gastankhsla", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "electrodynamics:fluidvoid", "weight": 4 },
+        { "type": "minecraft:item", "name": "electrodynamics:gasvent", "weight": 4 },
+
+        { "type": "minecraft:item", "name": "electrodynamics:ingottin", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotsilver", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotsteel", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotlead", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotbronze", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotvanadium", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotlithium", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotaluminum", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 16 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotchromium", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotstainlesssteel", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingottitanium", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:ingotmolybdenum", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+
+        { "type": "minecraft:item", "name": "electrodynamics:dustsalt", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:dustsilica", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:dustsulfur", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:oxidetrisulfur", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:oxidecalciumcarbonate", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:oxidesodiumcarbonate", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+
+        { "type": "minecraft:item", "name": "electrodynamics:ceramicplate", "weight": 20, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:sheetplastic", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:mechanicalvalve", "weight": 10 },
+        { "type": "minecraft:item", "name": "electrodynamics:pressuregauge", "weight": 6 },
+        { "type": "minecraft:item", "name": "electrodynamics:motor", "weight": 20 },
+
+        { "type": "minecraft:item", "name": "electrodynamics:circuitbasic", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:circuitadvanced", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "electrodynamics:circuitelite", "weight": 2 },
+
+        { "type": "minecraft:item", "name": "electrodynamics:electricdrill", "weight": 1 },
+        { "type": "minecraft:item", "name": "electrodynamics:electricchainsaw", "weight": 1 },
+        { "type": "minecraft:item", "name": "electrodynamics:electricbaton", "weight": 1 }
+      ]
+    }
+  ]
+}

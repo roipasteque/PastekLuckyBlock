@@ -1,0 +1,9 @@
+{
+  "type": "pastekluckyblock:loot_table",
+  "conditions": [],
+  "injected_loot_table": "pastekluckyblock:injections/assemblyline",
+  "target_loot_tables": [
+    "pastekluckyblock:chests/good_loot"
+  ],
+  "modid": "assemblyline"
+}

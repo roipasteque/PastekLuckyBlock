@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "variant=default": { "model": "pastekluckyblock:block/lucky_block" },
+    "variant=watermelon": { "model": "pastekluckyblock:block/lucky_watermelon" }
+  }
+}

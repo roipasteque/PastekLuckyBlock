@@ -1,0 +1,64 @@
+{
+  "trigger_chance": 0.30,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "chemicalscience:radiationshielding_concrete", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:radiationshielding_tantalum", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:radiationshielding_glass", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:radiationshielding_advancedglass", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+
+        { "type": "minecraft:item", "name": "chemicalscience:circuitmaker", "weight": 1 },
+        { "type": "minecraft:item", "name": "chemicalscience:organicsolarpanel", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "chemicalscience:rack_manganese", "weight": 8 },
+        { "type": "minecraft:item", "name": "chemicalscience:rack_steel", "weight": 8 },
+        { "type": "minecraft:item", "name": "chemicalscience:laboratory_bench", "weight": 8 },
+        { "type": "minecraft:item", "name": "chemicalscience:laboratory_support", "weight": 8 },
+        { "type": "minecraft:item", "name": "chemicalscience:laboratory_sink", "weight": 8 },
+        { "type": "minecraft:item", "name": "chemicalscience:laboratory_storage", "weight": 8 },
+
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_radiation", "weight": 2 },
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_biohazard", "weight": 2 },
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_electrical", "weight": 2 },
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_danger", "weight": 2 },
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_flammable", "weight": 2 },
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_toxic", "weight": 2 },
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_corrosive", "weight": 2 },
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_pressure", "weight": 2 },
+        { "type": "minecraft:item", "name": "chemicalscience:symbol_explosive", "weight": 2 },
+
+        { "type": "minecraft:item", "name": "chemicalscience:lamp_magnesiumaluminum", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:metalhalidelamp_mw", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:metalhalidelamp_mr", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:metalhalidelamp_mg", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:metalhalidelamp_mb", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:metalhalidelamp_sw", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:metalhalidelamp_sr", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:metalhalidelamp_sg", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:metalhalidelamp_sb", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 3 } } ] },
+
+        { "type": "minecraft:item", "name": "chemicalscience:soda", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 16 } } ] },
+
+        { "type": "minecraft:item", "name": "chemicalscience:dust_boron", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:dust_yttrium", "weight": 6 },
+        { "type": "minecraft:item", "name": "chemicalscience:ingot_magnesium", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:ingot_magnesiumaluminum", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:ingot_manganese", "weight": 15, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:ingot_manganesealuminum", "weight": 12, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 16 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:ingot_silicon", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:ingot_tungsten", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:ingot_manganine", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:ingot_manganine", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+
+        { "type": "minecraft:item", "name": "chemicalscience:sword_tungstencarbide", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:pickaxe_tungstencarbide", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:axe_tungstencarbide", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:shovel_tungstencarbide", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "chemicalscience:hoe_tungstencarbide", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] }
+
+      ]
+    }
+  ]
+}

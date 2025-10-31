@@ -1,0 +1,48 @@
+{
+  "trigger_chance": 0.10,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "alexsmobs:bear_fur", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:roadrunner_feather", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:gazelle_horn", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:crocodile_scute", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:maggot", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:banana", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:rattlesnake_rattle", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:lobster_tail", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:komodo_spit", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:centipede_leg", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:moose_antler", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:moose_ribs", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:cockroach_ootheca", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:spiked_scute", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:guster_eye", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:emu_egg", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:emu_feather", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:tarantula_hawk_wing_fragment", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:kangaroo_hide", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:kangaroo_meat", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:rainbow_jelly", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:rocky_shell", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:bison_fur", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:raw_catfish", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 5 } } ] },
+
+        { "type": "minecraft:item", "name": "alexsmobs:skelewag_sword", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:ghostly_pickaxe", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:stink_ray", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:roadrunner_boots", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:crocodile_chestplate", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:centipede_leggings", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:frontier_cap", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:fedora", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:emu_leggins", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:froststalker_helmet", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:tendon_whip", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] },
+        { "type": "minecraft:item", "name": "alexsmobs:unsettling_kimono", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.4 } } ] }
+
+      ]
+    }
+  ]
+}

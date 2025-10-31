@@ -1,18 +1,19 @@
 package net.pastek.luckyblock.common.loot;
 
-import com.google.common.base.Suppliers;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.fml.ModList;
-import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 import net.pastek.luckyblock.PastekLuckyBlock;
 import net.pastek.luckyblock.prefab.configuration.LBConfigurationHandler;
@@ -22,12 +23,16 @@ import java.io.InputStreamReader;
 import java.util.*;
 public class LootTableModifier extends LootModifier {
 
-    public static final MapCodec<? extends IGlobalLootModifier> CODEC = Suppliers.memoize(() ->
-            com.mojang.serialization.codecs.RecordCodecBuilder.create(inst -> codecStart(inst)
-                    .and(ResourceLocation.CODEC.fieldOf("injected_loot_table").forGetter(m -> m.injectedLootTable))
-                    .and(ResourceLocation.CODEC.listOf().fieldOf("target_loot_tables").forGetter(m -> m.targetLootTables))
-                    .and(com.mojang.serialization.Codec.STRING.optionalFieldOf("modid").forGetter(m -> m.requiredModid))
-                    .apply(inst, LootTableModifier::new))
+    public static final MapCodec<LootTableModifier> CODEC = RecordCodecBuilder.mapCodec(
+            (RecordCodecBuilder.Instance<LootTableModifier> inst) ->
+                    codecStart(inst)
+                            .and(ResourceLocation.CODEC.fieldOf("injected_loot_table")
+                                    .forGetter(m -> m.injectedLootTable))
+                            .and(ResourceLocation.CODEC.listOf().fieldOf("target_loot_tables")
+                                    .forGetter(m -> m.targetLootTables))
+                            .and(com.mojang.serialization.Codec.STRING.optionalFieldOf("modid")
+                                    .forGetter(m -> m.requiredModid))
+                            .apply(inst, LootTableModifier::new)
     );
 
     private final ResourceLocation injectedLootTable;
@@ -146,7 +151,9 @@ public class LootTableModifier extends LootModifier {
                             if (!"minecraft:item".equals(entry.get("type").getAsString())) continue;
 
                             String itemName = entry.get("name").getAsString();
-                            Item item = ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse(itemName));
+                            Item item = context.getLevel().registryAccess()
+                                    .registryOrThrow(Registries.ITEM)
+                                    .get(ResourceLocation.tryParse(itemName));
                             if (item == null) {
                                 if (debug)
                                     PastekLuckyBlock.LOGGER.warn("[PastekLuckyBlock] Missing item '{}'", itemName);
@@ -228,10 +235,10 @@ public class LootTableModifier extends LootModifier {
                                 stack.setDamageValue((int)(stack.getMaxDamage() * dmg));
                             }
                             if (e.enchantRandom && stack.isEnchantable())
-                                net.minecraft.world.item.enchantment.EnchantmentHelper.enchantItem(context.getRandom(), stack, 30, true);
+                                EnchantmentHelper.enchantItem(context.getRandom(), stack, 30, context.getLevel().registryAccess(), Optional.empty());
                             if (e.enchantWithLevels && stack.isEnchantable()) {
                                 int level = e.minLevel + context.getRandom().nextInt(e.maxLevel - e.minLevel + 1);
-                                net.minecraft.world.item.enchantment.EnchantmentHelper.enchantItem(context.getRandom(), stack, level, e.treasureAllowed);
+                                EnchantmentHelper.enchantItem(context.getRandom(), stack, level, context.getLevel().registryAccess(), Optional.empty());
                             }
 
                             generatedLoot.add(stack);
@@ -250,10 +257,8 @@ public class LootTableModifier extends LootModifier {
     }
 
 
-
-
     @Override
-    public MapCodec<? extends IGlobalLootModifier> codec() {
-        return CODEC.get();
+    public MapCodec<LootTableModifier> codec() {
+        return CODEC;
     }
 }

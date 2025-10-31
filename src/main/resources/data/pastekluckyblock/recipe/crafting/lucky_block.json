@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:ingots/gold"
+    },
+    "W": {
+      "tag": "pastekluckyblock:lucky_block_ingredient"
+    }
+  },
+  "pattern": [
+    "III",
+    "IWI",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pastekluckyblock:lucky_block"
+  }
+}

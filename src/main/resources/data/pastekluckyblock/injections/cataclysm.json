@@ -1,0 +1,49 @@
+{
+  "trigger_chance": 0.25,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "cataclysm:witherite_ingot", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "cataclysm:ancient_metal_nugget", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "cataclysm:black_steel_nugget", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "cataclysm:ignitium_ingot", "weight": 2 },
+        { "type": "minecraft:item", "name": "cataclysm:cursium_ingot", "weight": 2 },
+        { "type": "minecraft:item", "name": "cataclysm:ignitium_upgrade", "weight": 2 },
+        { "type": "minecraft:item", "name": "cataclysm:cursium_upgrade", "weight": 2 },
+        { "type": "minecraft:item", "name": "cataclysm:dying_amber", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "cataclysm:koboletone_bone", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "cataclysm:crystallized_coral_fragments", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+        { "type": "minecraft:item", "name": "cataclysm:lionfish", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "cataclysm:amethyst_crab_meat", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+
+        { "type": "minecraft:item", "name": "cataclysm:mech_eye", "weight": 3 },
+        { "type": "minecraft:item", "name": "cataclysm:flame_eye", "weight": 3 },
+        { "type": "minecraft:item", "name": "cataclysm:void_eye", "weight": 3 },
+        { "type": "minecraft:item", "name": "cataclysm:monstrous_eye", "weight": 3 },
+        { "type": "minecraft:item", "name": "cataclysm:abyss_eye", "weight": 3 },
+        { "type": "minecraft:item", "name": "cataclysm:desert_eye", "weight": 3 },
+        { "type": "minecraft:item", "name": "cataclysm:cursed_eye", "weight": 3 },
+        { "type": "minecraft:item", "name": "cataclysm:storm_eye", "weight": 3 },
+
+        { "type": "minecraft:item", "name": "cataclysm:bulwark_of_the_flame", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:gauntlet_of_guard", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:gauntlet_of_bulwark", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:gauntlet_of_maelstrom", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:the_incinerator", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:cursed_bow", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:soul_render", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:the_annhilator", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:the_immolator", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:meat_shredder", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:laser_gatling", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:wither_assault_shoulder_weapon", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:astrape", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:ceraunus", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:tidal_claws", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:infernal_forge", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] },
+        { "type": "minecraft:item", "name": "cataclysm:ancient_spear", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 50 }, "treasure": true} ] }
+      ]
+    }
+  ]
+}

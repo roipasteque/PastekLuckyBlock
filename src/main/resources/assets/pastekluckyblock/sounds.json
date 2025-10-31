@@ -1,0 +1,18 @@
+{
+  "midloot": {
+    "sounds": [
+      {
+        "name": "pastekluckyblock:midloot",
+        "stream": false
+      }
+    ]
+  },
+  "badloot": {
+    "sounds": [
+      {
+        "name": "pastekluckyblock:badloot",
+        "stream": false
+      }
+    ]
+  }
+}

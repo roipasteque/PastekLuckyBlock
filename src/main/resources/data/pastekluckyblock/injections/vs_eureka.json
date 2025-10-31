@@ -1,0 +1,24 @@
+{
+  "trigger_chance": 0.25,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "vs_eureka:floater", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 9 } } ] },
+        { "type": "minecraft:item", "name": "vs_eureka:balloon", "weight": 5, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 9 } } ] },
+        { "type": "minecraft:item", "name": "vs_eureka:ballast", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:anchor", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:engine", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "vs_eureka:oak_ship_helm", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:spruce_ship_helm", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:birch_ship_helm", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:jungle_ship_helm", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:accacia_ship_helm", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:dark_oak_ship_helm", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:crimson_ship_helm", "weight": 1 },
+        { "type": "minecraft:item", "name": "vs_eureka:warped_ship_helm", "weight": 1 }
+      ]
+    }
+  ]
+}

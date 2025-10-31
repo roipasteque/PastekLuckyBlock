@@ -1,0 +1,36 @@
+{
+  "trigger_chance": 0.5,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "relics:amphibian_boot", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:arrow_quiver", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:bastion_ring", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:blazing_flask", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:chorus_inhibitor", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:drowned_belt", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:elytra_booster", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:enders_hand", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:holy_locket", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:horse_flute", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:hunter_belt", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:ice_breaker", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:ice_skates", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:infinity_ham", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:jellyfish_necklace", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:leather_belt", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:magic_mirror", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:magma_walker", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:midnight_robe", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:rage_glove", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:roller_skates", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:shadow_glaive", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:space_dissector", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:spatial_sign", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:spore_sack", "weight": 1 },
+        { "type": "minecraft:item", "name": "relics:wool_mitten", "weight": 1 }
+      ]
+    }
+  ]
+}

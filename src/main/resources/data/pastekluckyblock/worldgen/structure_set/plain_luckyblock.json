@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "pastekluckyblock:plain_luckyblock",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 727835001,
+
+    "spacing": 30,
+
+    "separation": 10,
+
+    "type": "minecraft:random_spread"
+  }
+}

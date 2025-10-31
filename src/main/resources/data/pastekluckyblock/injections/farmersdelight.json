@@ -1,0 +1,79 @@
+{
+  "trigger_chance": 0.25,
+  "pools": [
+    {
+      "rolls": {
+        "min": 1,
+        "max": 3
+      },
+
+      "entries": [
+        { "type": "minecraft:item", "name": "farmersdelight:straw", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:tree_bark", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:rope", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:canvas", "weight": 3 },
+
+        { "type": "minecraft:item", "name": "minecraft:brown_mushroom", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "minecraft:red_mushroom", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:cabbage_seeds", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:tomato_seeds", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:rice", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:cabbage", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:tomato", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:onion", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:milk_bottle", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 2 } } ] },
+
+
+        { "type": "minecraft:item", "name": "farmersdelight:fried_egg", "weight": 2, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:apple_pie", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:sweet_berry_cheesecake", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:chocolate_pie", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:barbecue_stick", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:chicken_sandwich", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:hamburger", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:bacon_sandwich", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:mutton_wrap", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:dumplings", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:stuffed_potato", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:cabbage_rolls", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "farmersdelight:beef_stew", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:chicken_soup", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:vegetable_soup", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:fish_stew", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:fried_rice", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:pumpkin_soup", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:baked_cod_stew", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:noodle_soup", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:bacon_and_eggs", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:pasta_with_meatballs", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:pasta_with_mutton_chop", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:mushroom_rice", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:roasted_mutton_chops", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:vegetable_noodles", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:steak_and_potatoes", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:ratatouille", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:squid_ink_pasta", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:grilled_salmon", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:roast_chicken", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:honey_glazed_ham", "weight": 1 },
+        { "type": "minecraft:item", "name": "farmersdelight:shepherds_pie", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "farmersdelight:stove", "weight": 2 },
+        { "type": "minecraft:item", "name": "farmersdelight:cooking_pot", "weight": 3 },
+        { "type": "minecraft:item", "name": "farmersdelight:cutting_board", "weight": 3 },
+
+        { "type": "minecraft:item", "name": "farmersdelight:skillet", "weight": 2, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:flint_knife", "weight": 4, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:flint_knife", "weight": 3, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 30 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:gold_knife", "weight": 3, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:gold_knife", "weight": 2, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 30 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:iron_knife", "weight": 2, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:iron_knife", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 30 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:diamond_knife", "weight": 1, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "farmersdelight:diamond_knife", "weight": 1, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 30 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] }
+
+      ]
+    }
+  ]
+}

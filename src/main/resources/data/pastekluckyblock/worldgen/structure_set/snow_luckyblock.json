@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "pastekluckyblock:snow_luckyblock",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 727835005,
+
+    "spacing": 30,
+
+    "separation": 10,
+
+    "type": "minecraft:random_spread"
+  }
+}

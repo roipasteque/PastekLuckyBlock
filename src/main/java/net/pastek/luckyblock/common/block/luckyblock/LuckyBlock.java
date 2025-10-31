@@ -2,10 +2,12 @@ package net.pastek.luckyblock.common.block.luckyblock;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -32,6 +34,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -40,6 +43,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.pastek.luckyblock.PastekLuckyBlock;
 import net.pastek.luckyblock.prefab.configuration.LBConfigurationHandler;
 import net.pastek.luckyblock.registers.LBBlocks;
@@ -47,9 +51,6 @@ import net.pastek.luckyblock.registers.LBSounds;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import static net.minecraft.world.item.enchantment.Enchantments.POWER;
-import static net.minecraft.world.item.enchantment.Enchantments.PROTECTION;
 
 public class LuckyBlock extends Block {
     public LuckyBlock(Properties props) {
@@ -88,10 +89,12 @@ public class LuckyBlock extends Block {
     }
 
     @Override
-    public void playerWillDestroy(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull Player player) {
+    public @NotNull BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
         this.spawnDestroyParticles(level, player, pos, state);
         level.gameEvent(GameEvent.BLOCK_DESTROY, pos, GameEvent.Context.of(player, state));
+
         generateRandomLoot(level, pos, player);
+        return super.playerWillDestroy(level, pos, state, player);
     }
 
     /**
@@ -230,18 +233,33 @@ public class LuckyBlock extends Block {
 
     private void spawnLootChest(Level level, BlockPos pos, String lootTable) {
         if (level.isClientSide) return;
+
         BlockPos chestPos = pos.above();
         level.setBlock(chestPos, Blocks.CHEST.defaultBlockState(), 3);
-        if (level.getBlockEntity(chestPos) instanceof ChestBlockEntity chest)
-            chest.setLootTable(PastekLuckyBlock.rl(lootTable), level.getRandom().nextLong());
+
+        if (level.getBlockEntity(chestPos) instanceof ChestBlockEntity chest) {
+            ResourceLocation rl = PastekLuckyBlock.rl(lootTable);
+            ResourceKey<LootTable> lootTableKey = ResourceKey.create(Registries.LOOT_TABLE, rl);
+            chest.setLootTable(lootTableKey, level.getRandom().nextLong());
+        }
     }
 
     private void spawnRandomEntity(Level level, BlockPos pos) {
-        List<EntityType<?>> mobs = ForgeRegistries.ENTITY_TYPES.getValues().stream()
-                .filter(t -> t.create(level) instanceof LivingEntity).toList();
+        List<EntityType<?>> mobs = level.registryAccess()
+                .registryOrThrow(Registries.ENTITY_TYPE)
+                .stream()
+                .filter(t -> t.create(level) instanceof LivingEntity)
+                .toList();
+
+        if (mobs.isEmpty()) return;
+
         EntityType<?> type = mobs.get(level.random.nextInt(mobs.size()));
-        Entity e = type.create(level);
-        if (e != null) { e.moveTo(pos.getX()+.5, pos.getY()+1, pos.getZ()+.5, 0, 0); level.addFreshEntity(e); }
+        Entity entity = type.create(level);
+
+        if (entity != null) {
+            entity.moveTo(pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, 0, 0);
+            level.addFreshEntity(entity);
+        }
     }
 
     private void trapInObsidianCage(Level level, BlockPos center) {
@@ -296,33 +314,39 @@ public class LuckyBlock extends Block {
 
         for (String tableId : configTables) {
             ResourceLocation rl = ResourceLocation.tryParse(tableId);
-            if (rl == null) continue;
-
-            ResourceLocation path = ResourceLocation.fromNamespaceAndPath(rl.getNamespace(), "loot_tables/" + rl.getPath() + ".json");
-            try (var resource = level.getServer().getResourceManager().open(path)) {
-                if (resource != null) available.add(rl);
-            } catch (Exception ignored) {
-            }
+            if (rl != null) available.add(rl);
         }
 
         if (available.isEmpty()) {
+            ResourceLocation fallback = ResourceLocation.fromNamespaceAndPath(PastekLuckyBlock.MOD_ID, "chests/good_loot");
+            available.add(fallback);
             if (LBConfigurationHandler.COMMON.debugLogging.get()) {
-                PastekLuckyBlock.LOGGER.warn("No valid loot tables found for chest at {}", pos);
-                return;
+                PastekLuckyBlock.LOGGER.warn(
+                        "No valid configured loot tables for chest at {}. Using fallback: {}",
+                        pos, fallback
+                );
             }
         }
 
         ResourceLocation chosen = available.get(random.nextInt(available.size()));
+
         if (LBConfigurationHandler.COMMON.debugLogging.get()) {
-            PastekLuckyBlock.LOGGER.info("Placing loot chest at {} with loot table: {}", pos, chosen);
+            PastekLuckyBlock.LOGGER.info(
+                    "Placing loot chest at {} with loot table: {}",
+                    pos, chosen
+            );
         }
+
         BlockPos chestPos = pos.above();
         level.setBlock(chestPos, Blocks.CHEST.defaultBlockState(), 3);
 
         if (level.getBlockEntity(chestPos) instanceof ChestBlockEntity chest) {
-            chest.setLootTable(chosen, random.nextLong());
+            ResourceKey<LootTable> lootTableKey = ResourceKey.create(Registries.LOOT_TABLE, chosen);
+            chest.setLootTable(lootTableKey, random.nextLong());
         }
     }
+
+
 
     private void dripstoneTrap(Level level, BlockPos center) {
         for (int i = 1; i <= 10; i++) {
@@ -394,7 +418,7 @@ public class LuckyBlock extends Block {
     }
 
     private static void giveRandomBadEffect(Player player, int duration, int amplifier) {
-        List<MobEffect> BAD_EFFECTS = List.of(
+        List<Holder<MobEffect>> BAD_EFFECTS = List.of(
                 MobEffects.BLINDNESS,
                 MobEffects.WEAKNESS,
                 MobEffects.MOVEMENT_SLOWDOWN,
@@ -403,8 +427,9 @@ public class LuckyBlock extends Block {
                 MobEffects.CONFUSION,
                 MobEffects.LEVITATION
         );
-        Random RANDOM = new Random();
-        MobEffect effect = BAD_EFFECTS.get(RANDOM.nextInt(BAD_EFFECTS.size()));
+
+        RandomSource random = player.level().getRandom();
+        Holder<MobEffect> effect = BAD_EFFECTS.get(random.nextInt(BAD_EFFECTS.size()));
         player.addEffect(new MobEffectInstance(effect, duration, amplifier));
     }
 
@@ -416,7 +441,7 @@ public class LuckyBlock extends Block {
     }
 
     private static void giveRandomGoodEffect(Player player, int duration, int amplifier) {
-        List<MobEffect> GOOD_EFFECTS = List.of(
+        List<Holder<MobEffect>> GOOD_EFFECTS = List.of(
                 MobEffects.DAMAGE_RESISTANCE,
                 MobEffects.DAMAGE_BOOST,
                 MobEffects.SATURATION,
@@ -429,8 +454,9 @@ public class LuckyBlock extends Block {
                 MobEffects.MOVEMENT_SPEED,
                 MobEffects.DIG_SPEED
         );
-        Random RANDOM = new Random();
-        MobEffect effect = GOOD_EFFECTS.get(RANDOM.nextInt(GOOD_EFFECTS.size()));
+
+        RandomSource random = player.level().getRandom();
+        Holder<MobEffect> effect = GOOD_EFFECTS.get(random.nextInt(GOOD_EFFECTS.size()));
         player.addEffect(new MobEffectInstance(effect, duration, amplifier));
     }
 
@@ -481,5 +507,138 @@ public class LuckyBlock extends Block {
                 level.setBlock(target, fluid.defaultBlockState(), 3);
             }
         }
+    }
+
+    private static void dropRandomEnchantedItem(Level level, BlockPos pos) {
+        Map<String, ItemStack> ITEMS = new HashMap<>();
+
+        ITEMS.put("helmet", new ItemStack(Items.NETHERITE_HELMET));
+        ITEMS.put("chestplate", new ItemStack(Items.NETHERITE_CHESTPLATE));
+        ITEMS.put("leggings", new ItemStack(Items.NETHERITE_LEGGINGS));
+        ITEMS.put("boots", new ItemStack(Items.NETHERITE_BOOTS));
+        ITEMS.put("turtle_helmet", new ItemStack(Items.TURTLE_HELMET));
+
+        ITEMS.put("sword", new ItemStack(Items.NETHERITE_SWORD));
+        ITEMS.put("axe", new ItemStack(Items.NETHERITE_AXE));
+        ITEMS.put("pickaxe", new ItemStack(Items.NETHERITE_PICKAXE));
+        ITEMS.put("shovel", new ItemStack(Items.NETHERITE_SHOVEL));
+        ITEMS.put("hoe", new ItemStack(Items.NETHERITE_HOE));
+
+        ITEMS.put("bow", new ItemStack(Items.BOW));
+        ITEMS.put("crossbow", new ItemStack(Items.CROSSBOW));
+        ITEMS.put("trident", new ItemStack(Items.TRIDENT));
+        ITEMS.put("shield", new ItemStack(Items.SHIELD));
+        ITEMS.put("elytra", new ItemStack(Items.ELYTRA));
+
+        List<String> keys = new ArrayList<>(ITEMS.keySet());
+        RandomSource random = level.getRandom();
+        String type = keys.get(random.nextInt(keys.size()));
+
+        ItemStack item = ITEMS.get(type).copy();
+        Map<Holder<Enchantment>, Integer> enchants = new HashMap<>();
+
+        RegistryAccess registryAccess = level.registryAccess();
+        Registry<Enchantment> enchantmentRegistry = registryAccess.registryOrThrow(Registries.ENCHANTMENT);
+
+        Holder<Enchantment> protection = enchantmentRegistry.getHolderOrThrow(Enchantments.PROTECTION);
+        Holder<Enchantment> unbreaking = enchantmentRegistry.getHolderOrThrow(Enchantments.UNBREAKING);
+        Holder<Enchantment> mending = enchantmentRegistry.getHolderOrThrow(Enchantments.MENDING);
+        Holder<Enchantment> efficiency = enchantmentRegistry.getHolderOrThrow(Enchantments.EFFICIENCY);
+        Holder<Enchantment> sharpness = enchantmentRegistry.getHolderOrThrow(Enchantments.SHARPNESS);
+        Holder<Enchantment> fireAspect = enchantmentRegistry.getHolderOrThrow(Enchantments.FIRE_ASPECT);
+        Holder<Enchantment> looting = enchantmentRegistry.getHolderOrThrow(Enchantments.LOOTING);
+        Holder<Enchantment> loyalty = enchantmentRegistry.getHolderOrThrow(Enchantments.LOYALTY);
+        Holder<Enchantment> channeling = enchantmentRegistry.getHolderOrThrow(Enchantments.CHANNELING);
+        Holder<Enchantment> riptide = enchantmentRegistry.getHolderOrThrow(Enchantments.RIPTIDE);
+        Holder<Enchantment> thorns = enchantmentRegistry.getHolderOrThrow(Enchantments.THORNS);
+
+        switch (type.toLowerCase()) {
+            // Armor
+            case "helmet", "chestplate", "leggings", "boots", "turtle_helmet" -> {
+                enchants.put(protection, 4);
+                enchants.put(unbreaking, 3);
+                enchants.put(mending, 1);
+
+                enchants.put(thorns, 3);
+                if (type.equalsIgnoreCase("helmet") || type.equalsIgnoreCase("turtle_helmet")) {
+                    Holder<Enchantment> respiration = enchantmentRegistry.getHolderOrThrow(Enchantments.RESPIRATION);
+                    Holder<Enchantment> aquaAffinity = enchantmentRegistry.getHolderOrThrow(Enchantments.AQUA_AFFINITY);
+                    enchants.put(respiration, 3);
+                    enchants.put(aquaAffinity, 1);
+                }
+                if (type.equalsIgnoreCase("boots")) {
+                    Holder<Enchantment> fallProt = enchantmentRegistry.getHolderOrThrow(Enchantments.FEATHER_FALLING);
+                    Holder<Enchantment> depthStrider = enchantmentRegistry.getHolderOrThrow(Enchantments.DEPTH_STRIDER);
+                    Holder<Enchantment> frostWalker = enchantmentRegistry.getHolderOrThrow(Enchantments.FROST_WALKER);
+                    enchants.put(fallProt, 4);
+                    enchants.put(depthStrider, 3);
+                    enchants.put(frostWalker, 2);
+                }
+            }
+
+            case "sword" -> {
+
+                enchants.put(sharpness, 5);
+                enchants.put(unbreaking, 3);
+                enchants.put(mending, 1);
+                enchants.put(fireAspect, 2);
+                enchants.put(looting, 3);
+            }
+            case "axe" -> {
+                enchants.put(efficiency, 5);
+                enchants.put(sharpness, 5);
+                enchants.put(unbreaking, 3);
+                enchants.put(mending, 1);
+            }
+            case "pickaxe", "shovel", "hoe" -> {
+                Holder<Enchantment> fortune = enchantmentRegistry.getHolderOrThrow(Enchantments.FORTUNE);
+                enchants.put(efficiency, 5);
+                enchants.put(unbreaking, 3);
+                enchants.put(mending, 1);
+                enchants.put(fortune, 3);
+            }
+
+            case "bow" -> {
+                Holder<Enchantment> power = enchantmentRegistry.getHolderOrThrow(Enchantments.POWER);
+                Holder<Enchantment> punch = enchantmentRegistry.getHolderOrThrow(Enchantments.PUNCH);
+                Holder<Enchantment> flamingArrows = enchantmentRegistry.getHolderOrThrow(Enchantments.FLAME);
+                enchants.put(power, 5);
+                enchants.put(punch, 2);
+                enchants.put(flamingArrows, 1);
+                enchants.put(unbreaking, 3);
+                enchants.put(mending, 1);
+            }
+            case "crossbow" -> {
+                Holder<Enchantment> quickCharge = enchantmentRegistry.getHolderOrThrow(Enchantments.QUICK_CHARGE);
+                Holder<Enchantment> multishot = enchantmentRegistry.getHolderOrThrow(Enchantments.MULTISHOT);
+                Holder<Enchantment> piercing = enchantmentRegistry.getHolderOrThrow(Enchantments.PIERCING);
+                enchants.put(quickCharge, 3);
+                enchants.put(multishot, 1);
+                enchants.put(piercing, 4);
+                enchants.put(unbreaking, 3);
+                enchants.put(mending, 1);
+            }
+
+            case "trident" -> {
+
+                enchants.put(loyalty, 3);
+                enchants.put(channeling, 1);
+                enchants.put(riptide, 3);
+                enchants.put(unbreaking, 3);
+                enchants.put(mending, 1);
+            }
+            case "shield", "elytra" -> {
+                enchants.put(unbreaking, 3);
+                enchants.put(mending, 1);
+            }
+        }
+
+        ItemEnchantments.Mutable itemEnchants = new ItemEnchantments.Mutable(EnchantmentHelper.getEnchantmentsForCrafting(item));
+        for (Map.Entry<Holder<Enchantment>, Integer> entry : enchants.entrySet()) {
+            itemEnchants.set(entry.getKey(), entry.getValue());
+        }
+
+        EnchantmentHelper.setEnchantments(item, itemEnchants.toImmutable());
+        Block.popResource(level, pos, item);
     }
 }

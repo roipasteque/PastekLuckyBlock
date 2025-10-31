@@ -1,0 +1,41 @@
+{
+  "trigger_chance": 0.30,
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "immersiveengineering:stick_treated", "weight": 8, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:stick_iron", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:stick_steel", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:stick_aluminum", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:hemp_fiber", "weight": 10, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 6 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:hemp_fabric", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:coal_coke", "weight": 6, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 4 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:component_iron", "weight": 5 },
+        { "type": "minecraft:item", "name": "immersiveengineering:component_steel", "weight": 5 },
+        { "type": "minecraft:item", "name": "immersiveengineering:wire_copper", "weight": 4, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:wire_electrum", "weight": 3, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:wire_aluminum", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:wire_steel", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 12 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:wirecoil_copper", "weight": 5 },
+        { "type": "minecraft:item", "name": "immersiveengineering:wirecoil_electrum", "weight": 4 },
+        { "type": "minecraft:item", "name": "immersiveengineering:wirecoil_steel", "weight": 3 },
+        { "type": "minecraft:item", "name": "immersiveengineering:wirecoil_copper_ins", "weight": 2 },
+        { "type": "minecraft:item", "name": "immersiveengineering:wirecoil_electrum_ins", "weight": 1 },
+
+        { "type": "minecraft:item", "name": "immersiveengineering:light_engineering", "weight": 2 },
+        { "type": "minecraft:item", "name": "immersiveengineering:heavy_engineering", "weight": 1 },
+        { "type": "minecraft:item", "name": "immersiveengineering:rs_engineering", "weight": 2 },
+
+        { "type": "minecraft:item", "name": "immersiveengineering:alloybrick", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 8 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:cokebrick", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 27 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:blastbrick", "weight": 1, "functions": [ { "function": "minecraft:set_count", "count": { "type": "minecraft:uniform", "min": 1, "max": 27 } } ] },
+
+        { "type": "minecraft:item", "name": "immersiveengineering:hammer", "weight": 5, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:hammer", "weight": 2, "functions": [ { "function": "minecraft:enchant_with_levels", "levels": { "type": "minecraft:uniform", "min": 0, "max": 30 }, "treasure": true}, { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:wirecutter", "weight": 4, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] },
+        { "type": "minecraft:item", "name": "immersiveengineering:screwdriver", "weight": 4, "functions": [ { "function": "minecraft:set_damage", "damage": { "type": "minecraft:uniform", "min": 0.0, "max": 0.9 } } ] }
+      ]
+    }
+  ]
+}

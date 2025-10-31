@@ -5,18 +5,18 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.pastek.luckyblock.PastekLuckyBlock;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-@Mod.EventBusSubscriber(modid = PastekLuckyBlock.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = PastekLuckyBlock.MOD_ID)
 public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
@@ -26,7 +26,7 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(LBBlockLootTableProvider::new, LootContextParamSets.BLOCK))));
+                List.of(new LootTableProvider.SubProviderEntry(LBBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
         BlockTagsProvider blockTagsProvider = new LBBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
@@ -36,5 +36,6 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new LBBlockStateProvider(packOutput, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new LBDatapackProvider(packOutput, lookupProvider));
+
     }
 }
