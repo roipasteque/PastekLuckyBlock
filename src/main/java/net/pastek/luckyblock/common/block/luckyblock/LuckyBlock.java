@@ -62,6 +62,7 @@ public class LuckyBlock extends Block {
                 .sound(SoundType.METAL)
                 .noLootTable()
         );
+
     }
 
     public enum Variant implements StringRepresentable {
