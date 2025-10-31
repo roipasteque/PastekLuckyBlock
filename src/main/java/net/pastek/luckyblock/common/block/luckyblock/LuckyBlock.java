@@ -44,6 +44,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.neoforged.fml.ModList;
 import net.pastek.luckyblock.PastekLuckyBlock;
 import net.pastek.luckyblock.prefab.configuration.LBConfigurationHandler;
 import net.pastek.luckyblock.registers.LBBlocks;
@@ -310,30 +311,46 @@ public class LuckyBlock extends Block {
 
     private void placeRandomLootChest(ServerLevel level, BlockPos pos, Random random) {
         List<String> configTables = (List<String>) LBConfigurationHandler.COMMON.lootTables.get();
-        List<ResourceLocation> available = new ArrayList<>();
+        List<ResourceKey<LootTable>> available = new ArrayList<>();
 
         for (String tableId : configTables) {
             ResourceLocation rl = ResourceLocation.tryParse(tableId);
-            if (rl != null) available.add(rl);
+            if (rl == null) continue;
+
+            String modid = rl.getNamespace();
+            if (!ModList.get().isLoaded(modid)) {
+                if (LBConfigurationHandler.COMMON.debugLogging.get()) {
+                    PastekLuckyBlock.LOGGER.debug(
+                            "Skipping loot table '{}' because mod '{}' is not loaded", rl, modid
+                    );
+                }
+                continue;
+            }
+
+            available.add(ResourceKey.create(Registries.LOOT_TABLE, rl));
         }
 
         if (available.isEmpty()) {
-            ResourceLocation fallback = ResourceLocation.fromNamespaceAndPath(PastekLuckyBlock.MOD_ID, "chests/good_loot");
+            ResourceKey<LootTable> fallback = ResourceKey.create(
+                    Registries.LOOT_TABLE,
+                    ResourceLocation.fromNamespaceAndPath(PastekLuckyBlock.MOD_ID, "chests/good_loot")
+            );
             available.add(fallback);
+
             if (LBConfigurationHandler.COMMON.debugLogging.get()) {
                 PastekLuckyBlock.LOGGER.warn(
                         "No valid configured loot tables for chest at {}. Using fallback: {}",
-                        pos, fallback
+                        pos, fallback.location()
                 );
             }
         }
 
-        ResourceLocation chosen = available.get(random.nextInt(available.size()));
+        ResourceKey<LootTable> chosen = available.get(random.nextInt(available.size()));
 
         if (LBConfigurationHandler.COMMON.debugLogging.get()) {
             PastekLuckyBlock.LOGGER.info(
                     "Placing loot chest at {} with loot table: {}",
-                    pos, chosen
+                    pos, chosen.location()
             );
         }
 
@@ -341,8 +358,7 @@ public class LuckyBlock extends Block {
         level.setBlock(chestPos, Blocks.CHEST.defaultBlockState(), 3);
 
         if (level.getBlockEntity(chestPos) instanceof ChestBlockEntity chest) {
-            ResourceKey<LootTable> lootTableKey = ResourceKey.create(Registries.LOOT_TABLE, chosen);
-            chest.setLootTable(lootTableKey, random.nextLong());
+            chest.setLootTable(chosen, random.nextLong());
         }
     }
 
