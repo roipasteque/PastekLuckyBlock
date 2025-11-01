@@ -20,6 +20,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.item.PrimedTnt;
@@ -148,6 +149,7 @@ public class LuckyBlock extends Block {
         badLootOptions.put(() -> dripstoneTrap(level, player.blockPosition()), 1);
         badLootOptions.put(() -> giveRandomBadEffect(player, 20*15, 4), 3);
         badLootOptions.put(() -> spawnRaid((ServerLevel) level, player, pos), 5);
+        badLootOptions.put(() -> spawnVindicator((ServerLevel) level, pos), 1);
 
         Runnable selected = getWeightedRandom(random, badLootOptions);
         if (selected != null) selected.run();
@@ -164,6 +166,7 @@ public class LuckyBlock extends Block {
         midLootOptions.put(() -> dropItems(level, pos, new ItemStack(Items.ENDER_PEARL, 3), new ItemStack(Items.ENDER_EYE)), 1);
         midLootOptions.put(() -> dropItems(level, pos, new ItemStack(Items.LAVA_BUCKET), new ItemStack(Items.WATER_BUCKET)), 3);
         midLootOptions.put(() -> dropAllDyes(level, pos), 1);
+        midLootOptions.put(() -> dropCopperArmor(level, pos), 1);
         midLootOptions.put(() -> dropItems(level, pos, new ItemStack(Items.TNT, 4)), 3);
         midLootOptions.put(() -> dropItems(level, pos, new ItemStack(Items.BREAD, 5), new ItemStack(Items.APPLE, 3)), 3);
         midLootOptions.put(() -> dropItems(level, pos, new ItemStack(Items.REDSTONE, 15), new ItemStack(Items.REPEATER, 2)), 1);
@@ -186,6 +189,8 @@ public class LuckyBlock extends Block {
         goodLootOptions.put(() -> dropItems(level, pos, new ItemStack(Items.IRON_BLOCK, 4)), 2);
         goodLootOptions.put(() -> dropItems(level, pos, new ItemStack(Items.EXPERIENCE_BOTTLE, 10)), 3);
         goodLootOptions.put(() -> dropDiamondGear(level, pos), 1);
+        goodLootOptions.put(() -> dropGoldenPickaxe(level, pos), 1);
+        goodLootOptions.put(() -> spawnDidier((ServerLevel) level, pos), 1);
         goodLootOptions.put(() -> giveRandomGoodEffect(player, 20*15, 4), 1);
 
         Runnable selected = getWeightedRandom(random, goodLootOptions);
@@ -317,6 +322,28 @@ public class LuckyBlock extends Block {
                 new ItemStack(Items.DIAMOND_PICKAXE),
                 new ItemStack(Items.DIAMOND_CHESTPLATE)
         );
+    }
+
+    private void dropCopperArmor(Level level, BlockPos pos) {
+        ItemStack helmet = new ItemStack(Items.COPPER_HELMET);
+        ItemStack chestplate = new ItemStack(Items.COPPER_CHESTPLATE);
+        ItemStack leggings = new ItemStack(Items.COPPER_LEGGINGS);
+        ItemStack boots = new ItemStack(Items.COPPER_BOOTS);
+
+        for (ItemStack stack : List.of(helmet, chestplate, leggings, boots)) {
+            stack.setDamageValue(stack.getMaxDamage() - 1);
+        }
+
+        dropItems(level, pos, helmet, chestplate, leggings, boots);
+    }
+
+    private void dropGoldenPickaxe(Level level, BlockPos pos) {
+        ItemStack pickaxe = new ItemStack(Items.GOLDEN_PICKAXE);
+        RegistryAccess registryAccess = level.registryAccess();
+        Registry<Enchantment> enchantmentRegistry = registryAccess.lookupOrThrow(Registries.ENCHANTMENT);
+        Holder<Enchantment> efficiency = enchantmentRegistry.getOrThrow(Enchantments.EFFICIENCY);
+        pickaxe.enchant(efficiency, 7);
+        dropItems(level, pos, pickaxe);
     }
 
     private void dropAllDyes(Level level, BlockPos pos) {
@@ -530,6 +557,55 @@ public class LuckyBlock extends Block {
             }
         }
     }
+
+    private void spawnDidier(ServerLevel level, BlockPos pos) {
+        Entity entity = EntityType.COPPER_GOLEM.spawn(
+                level,
+                null,
+                null,
+                pos,
+                EntitySpawnReason.TRIGGERED,
+                true,
+                true
+        );
+
+        if (entity != null) {
+            entity.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+
+            entity.setCustomName(Component.literal("§6Didier"));
+            entity.setCustomNameVisible(true);
+
+            if (entity instanceof LivingEntity living) {
+                living.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.5);
+            }
+
+            level.addFreshEntity(entity);
+        }
+    }
+
+    private void spawnVindicator(ServerLevel level, BlockPos pos) {
+        Entity entity = EntityType.VINDICATOR.spawn(
+                level,
+                null,
+                null,
+                pos,
+                EntitySpawnReason.TRIGGERED,
+                true,
+                true
+        );
+
+        if (entity != null) {
+            entity.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+
+
+            if (entity instanceof LivingEntity living) {
+                living.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, Integer.MAX_VALUE, 0, false, false));
+            }
+
+            level.addFreshEntity(entity);
+        }
+    }
+
 
 
     private void rideTntChicken(ServerLevel level, Player player) {
