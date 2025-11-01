@@ -26,10 +26,7 @@ import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.VillagerData;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.DyeItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -38,7 +35,6 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -56,13 +52,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class LuckyBlock extends Block {
-    public LuckyBlock() {
-        super(BlockBehaviour.Properties.of()
-                .strength(2f)
-                .sound(SoundType.METAL)
-                .noLootTable()
-        );
-
+    public LuckyBlock(BlockBehaviour.Properties properties) {
+        super(properties);
+        registerDefaultState(stateDefinition.any().setValue(VARIANT, Variant.DEFAULT));
     }
 
     public enum Variant implements StringRepresentable {

@@ -6,6 +6,8 @@ version="${mod_version}"
 displayName="${mod_name}"
 authors="${mod_authors}"
 description='''${mod_description}'''
+logoFile="pastek.png"
+displayURL="https://github.com/roipasteque/PastekLuckyBlock/tree/1.21.10"
 
 [[dependencies.${mod_id}]]
     modId="neoforge"
