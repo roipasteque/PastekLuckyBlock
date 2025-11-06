@@ -248,26 +248,17 @@ public class LuckyBlock extends Block {
         }
     }
 
+    private static final List<EntityType<? extends LivingEntity>> RANDOM_ENTITIES = List.of(
+            EntityType.ALLAY, EntityType.ARMADILLO, EntityType.AXOLOTL, EntityType.BAT, EntityType.BEE, EntityType.BLAZE, EntityType.BOGGED, EntityType.BREEZE, EntityType.CAMEL, EntityType.CAT, EntityType.CAVE_SPIDER, EntityType.CHICKEN, EntityType.COD, EntityType.COPPER_GOLEM, EntityType.COW, EntityType.CREAKING, EntityType.CREEPER, EntityType.DOLPHIN, EntityType.DONKEY, EntityType.DROWNED, EntityType.ELDER_GUARDIAN, EntityType.ENDERMAN, EntityType.ENDERMITE, EntityType.EVOKER, EntityType.FOX, EntityType.FROG, EntityType.GHAST, EntityType.GLOW_SQUID, EntityType.GOAT, EntityType.GUARDIAN, EntityType.HAPPY_GHAST, EntityType.HOGLIN, EntityType.HORSE, EntityType.ILLUSIONER, EntityType.IRON_GOLEM, EntityType.LLAMA, EntityType.MAGMA_CUBE, EntityType.MOOSHROOM, EntityType.MULE, EntityType.OCELOT, EntityType.PANDA, EntityType.PARROT, EntityType.PHANTOM, EntityType.PIG, EntityType.PIGLIN, EntityType.PIGLIN_BRUTE, EntityType.PILLAGER, EntityType.POLAR_BEAR, EntityType.PUFFERFISH, EntityType.RABBIT, EntityType.RAVAGER, EntityType.SALMON, EntityType.SHEEP, EntityType.SHULKER, EntityType.SILVERFISH, EntityType.SKELETON, EntityType.SKELETON_HORSE, EntityType.SLIME, EntityType.SNIFFER, EntityType.SNOW_GOLEM, EntityType.SPIDER, EntityType.SQUID, EntityType.STRAY, EntityType.STRIDER, EntityType.TADPOLE, EntityType.TRADER_LLAMA, EntityType.TROPICAL_FISH, EntityType.TURTLE, EntityType.VEX, EntityType.VILLAGER, EntityType.VINDICATOR, EntityType.WANDERING_TRADER, EntityType.WITCH, EntityType.WITHER, EntityType.WITHER_SKELETON, EntityType.WOLF, EntityType.ZOGLIN, EntityType.ZOMBIE, EntityType.ZOMBIE_HORSE, EntityType.ZOMBIE_VILLAGER, EntityType.ZOMBIFIED_PIGLIN
+    );
+
+
     private void spawnRandomEntity(ServerLevel level, BlockPos pos) {
-        RegistryAccess registryAccess = level.registryAccess();
-        Registry<EntityType<?>> registry = registryAccess.lookup(Registries.ENTITY_TYPE)
-                .orElseThrow(() -> new IllegalStateException("Missing ENTITY_TYPE registry"));
+        if (RANDOM_ENTITIES.isEmpty()) return;
 
-        List<EntityType<?>> allTypes = registry.stream().toList();
-        if (allTypes.isEmpty()) {
-            return;
-        }
+        EntityType<? extends LivingEntity> type = RANDOM_ENTITIES.get(level.random.nextInt(RANDOM_ENTITIES.size()));
 
-        EntityType<?> type = allTypes.get(level.random.nextInt(allTypes.size()));
-
-        Class<?> baseClass = type.getBaseClass();
-        if (!LivingEntity.class.isAssignableFrom(baseClass)) {
-            return;
-        }
-
-        @SuppressWarnings("unchecked")
-        EntityType<? extends LivingEntity> livingType = (EntityType<? extends LivingEntity>) type;
-        LivingEntity entity = livingType.spawn(
+        LivingEntity entity = type.spawn(
                 level,
                 null,
                 null,
